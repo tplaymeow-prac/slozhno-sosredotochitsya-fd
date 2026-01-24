@@ -1,12 +1,17 @@
 :root {
-    --cover-image: url("../images/cover-image-light.png");
-    --bg-color: #FFF1F7;
-    --menu-buttons-color: #353430;
-    --accent-color: #353430;
-    --title-color: #FFC2E6;
-    --title-shadow-color: #ff8dcb;
-    --title-decor: #FF8DCB;
-    --subtitle-color: #353430;
-    --section-title-color: #353430;
-    --section-subtitle-color: #353430;
+  --background-cover-image: url("../images/cover-image-dark.png");
+  --background-color: #000028;
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
+  --subtitle-color: #000028;
+  --section-title-color: #ff0070;
+  --section-subtitle-color: #000028;
+  --card-text-color: #f1b2ce;
+  --content-padding: 10px;
+}
+
+@media (width >= 768px) {
+  :root {
+    --content-padding: 20px;
+  }
 }

@@ -1,1 +1,0 @@
-https://github.com/tplaymeow-prac/slozhno-sosredotochitsya-fd

@@ -1,39 +1,20 @@
+/*
+  Специально для тёмной темы при наличии класса,
+  здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
+
 :root.theme-dark {
-    --cover-image: url("../images/cover-image-dark.png");
-    --bg-color: #000028;
-    --menu-buttons-color: #FF0070;
-    --accent-color: #FF0070;
-    --title-color: #DB00FF;
-    --title-shadow-color: #FF0070;
-    --title-decor: #FF0070;
-    --subtitle-color: #000028;
-    --section-title-color: #FF0070;
-    --section-subtitle-color: #000028;
+  --background-cover-image: url("../images/cover-image-dark.png");
+  --background-color: #000028;
+  --accent-color: #ff0070;
+  --title-color: #db00ff;
+  --subtitle-color: #000028;
+  --section-title-color: #ff0070;
+  --section-subtitle-color: #000028;
+  --card-text-color: #f1b2ce;
 }
 
-:root.theme-dark .rec-label {
-    display: block;
-}
-
-@media (prefers-color-scheme: dark) {
-    :root {
-        --cover-image: url("../images/cover-image-dark.png");
-        --bg-color: #000028;
-        --menu-buttons-color: #FF0070;
-        --accent-color: #FF0070;
-        --title-color: #DB00FF;
-        --title-shadow-color: #FF0070;
-        --title-decor: #FF0070;
-        --subtitle-color: #000028;
-        --section-title-color: #FF0070;
-        --section-subtitle-color: #000028;
-    }
-
-    .rec-label {
-        display: block;
-    }
-
-    .page.theme-auto .rec-label {
-        display: block;
-    }
+.header__rec-label {
+  display: block;
 }

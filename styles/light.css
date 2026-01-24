@@ -1,17 +1,37 @@
+/*
+  Специально для светлой темы при наличии класса.
+  Здесь окажутся стили, которые нужно переопределить принудительно,
+  переключая тему
+*/
 
 :root.theme-light {
-    --cover-image: url("../images/cover-image-light.png");
-    --bg-color: #FFF1F7;
-    --menu-buttons-color: #353430;
-    --accent-color: #353430;
-    --title-color: #FFC2E6;
-    --title-shadow-color: #ff8dcb;
-    --title-decor: #FF8DCB;
+  --background-cover-image: url("../images/cover-image-light.png");
+  --background-color: #fff1f7;
+  --accent-color: #ff8dcb;
+  --title-color: #ffc2e6;
+  --subtitle-color: #353430;
+  --section-title-color: #353430;
+  --section-subtitle-color: #353430;
+  --card-text-color: #353430;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background-cover-image: url("../images/cover-image-light.png");
+    --background-color: #fff1f7;
+    --accent-color: #ff8dcb;
+    --title-color: #ffc2e6;
     --subtitle-color: #353430;
     --section-title-color: #353430;
     --section-subtitle-color: #353430;
+    --card-text-color: #353430;
+  }
 
-    .rec-label {
-        display: none;
-    }
+  .header__rec-label {
+    display: none;
+  }
+}
+
+.theme-light .header__rec-label {
+  display: none;
 }
