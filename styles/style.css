@@ -210,9 +210,6 @@ body {
 .concentration_images .card__title {
   grid-area: title;
 }
-.gallery {
-  grid-area: gallery;
-}
 
 .section__card {
   display: flex;
@@ -273,6 +270,7 @@ body {
     "books"
     "street";
   gap: 10px;
+  grid-area: gallery;
 }
 
 .gallery__image {
