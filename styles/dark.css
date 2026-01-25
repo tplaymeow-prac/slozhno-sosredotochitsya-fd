@@ -7,6 +7,8 @@
 :root.theme-dark {
   --background-cover-image: url("../images/cover-image-dark.png");
   --background-color: #000028;
+  --menu-button-color: #ff0070;
+  --corner-color: #ff0070;
   --accent-color: #ff0070;
   --title-color: #db00ff;
   --subtitle-color: #000028;
@@ -15,6 +17,12 @@
   --card-text-color: #f1b2ce;
 }
 
-.header__rec-label {
+:root.theme-dark .header__rec-label {
   display: block;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root:not(.theme-light) .header__rec-label {
+    display: block;
+  }
 }

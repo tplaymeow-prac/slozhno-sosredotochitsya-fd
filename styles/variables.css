@@ -1,6 +1,8 @@
 :root {
   --background-cover-image: url("../images/cover-image-dark.png");
   --background-color: #000028;
+  --menu-button-color: #ff0070;
+  --corner-color: #ff0070;
   --accent-color: #ff0070;
   --title-color: #db00ff;
   --subtitle-color: #000028;
@@ -8,10 +10,12 @@
   --section-subtitle-color: #000028;
   --card-text-color: #f1b2ce;
   --content-padding: 10px;
+  --logo-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
 }
 
 @media (width >= 768px) {
   :root {
     --content-padding: 20px;
+    --logo-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
   }
 }

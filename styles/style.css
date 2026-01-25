@@ -1,7 +1,7 @@
 body {
   display: grid;
   gap: 40px;
-  font-family: "IBM Plex Mono", sans-serif;
+  font-family: "IBM Plex Mono", monospace;
 }
 
 .page {
@@ -59,12 +59,12 @@ body {
   font-size: 18px;
   line-height: 23px;
   text-transform: lowercase;
-  color: var(--accent-color);
+  color: var(--menu-button-color);
   padding: 1.5px 13px;
 }
 
 .header__theme-menu-button:hover {
-  outline: 1px solid color-mix(in srgb, var(--accent-color) 40%, transparent);
+  outline: 1px solid color-mix(in srgb, var(--menu-button-color) 40%, transparent);
 }
 
 .header__theme-menu-button:focus {
@@ -72,11 +72,11 @@ body {
 }
 
 .header__theme-menu-button:focus-visible {
-  border-block-end: 1px solid var(--accent-color);
+  border-block-end: 1px solid var(--menu-button-color);
 }
 
 .header__theme-menu-button_active {
-  outline: 1px solid var(--accent-color);
+  outline: 1px solid var(--menu-button-color);
   pointer-events: none;
 }
 
@@ -94,21 +94,21 @@ body {
 .decorated-zone::before {
   top: var(--content-padding);
   right: var(--content-padding);
-  border-inline-end: 1px solid var(--accent-color);
-  border-block-start: 1px solid var(--accent-color);
+  border-inline-end: 1px solid var(--corner-color);
+  border-block-start: 1px solid var(--corner-color);
 }
 
 .decorated-zone::after {
   bottom: var(--content-padding);
   left: var(--content-padding);
-  border-inline-start: 1px solid var(--accent-color);
-  border-block-end: 1px solid var(--accent-color);
+  border-inline-start: 1px solid var(--corner-color);
+  border-block-end: 1px solid var(--corner-color);
 }
 
 .header__title {
   justify-self: start;
   align-self: center;
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--logo-size);
   color: var(--title-color);
   text-shadow: 4px 4px 0 var(--accent-color);
   line-height: 82.5%;
@@ -123,9 +123,10 @@ body {
 .header__subtitle {
   justify-self: end;
   align-self: center;
+}
+
+.header__subtitle p {
   font-weight: bold;
-  font-size: 18px;
-  line-height: 23.4px;
 }
 
 .main {
@@ -139,30 +140,9 @@ body {
   gap: 20px;
 }
 
-.concentration_why {
-  grid-template-areas:
-    "title"
-    "multitasking"
-    "dopamine";
-}
-
-.concentration_what {
-  grid-template-areas:
-    "title"
-    "concentration"
-    "food"
-    "gadgets";
-}
-
-.concentration_how {
-  grid-template-areas:
-    "title"
-    "subtitle"
-    "meditate"
-    "music"
-    "walk"
-    "eat"
-    "read";
+.section__content {
+  display: grid;
+  gap: 20px;
 }
 
 .concentration_images {
@@ -170,41 +150,6 @@ body {
     "title"
     "gallery";
   gap: 10px;
-}
-
-.section__card_multitasking {
-  grid-area: multitasking;
-}
-.section__card_dopamine {
-  grid-area: dopamine;
-}
-.section__card_concentration {
-  grid-area: concentration;
-}
-.section__card_food {
-  grid-area: food;
-}
-.section__card_gadgets {
-  grid-area: gadgets;
-}
-.section__card_meditate {
-  grid-area: meditate;
-}
-.section__card_music {
-  grid-area: music;
-}
-.section__card_walk {
-  grid-area: walk;
-}
-.section__card_eat {
-  grid-area: eat;
-}
-.section__card_read {
-  grid-area: read;
-}
-
-.concentration_how .card__title {
-  grid-area: subtitle;
 }
 
 .concentration_images .card__title {
@@ -218,28 +163,24 @@ body {
 }
 
 .section__title {
-  font-size: 18px;
-  line-height: 23.4px;
   font-weight: bold;
   color: var(--section-title-color);
-  grid-area: title;
+}
+
+.section_text {
+  font-size: 18px;
+  line-height: 23.4px;
 }
 
 .card__title {
-  font-size: 18px;
-  line-height: 23.4px;
   font-weight: bold;
 }
 
 .card__grayed__title {
-  font-size: 18px;
-  line-height: 23.4px;
   font-weight: normal;
 }
 
 .card__text {
-  font-size: 18px;
-  line-height: 23.4px;
   color: var(--card-text-color);
 }
 
@@ -249,7 +190,7 @@ body {
 }
 
 .card__text_link:hover {
-  text-decoration: underline;
+  border-block-end: 1px solid currentColor;
 }
 
 .card__text_link:focus {
@@ -280,19 +221,19 @@ body {
   display: block;
 }
 
-.gallery__image_sunset {
+.gallery__item_sunset {
   grid-area: sunset;
 }
-.gallery__image_ice-cream {
+.gallery__item_ice-cream {
   grid-area: ice-cream;
 }
-.gallery__image_tape {
+.gallery__item_tape {
   grid-area: tape;
 }
-.gallery__image_books {
+.gallery__item_books {
   grid-area: books;
 }
-.gallery__image_street {
+.gallery__item_street {
   grid-area: street;
 }
 
@@ -305,7 +246,7 @@ body {
 }
 
 .footer__text {
-  font-size: clamp(7.25rem, 7.0115rem + 1.0178vw, 7.5rem);
+  font-size: var(--logo-size);
   color: var(--title-color);
   text-shadow: 2px 2px 0 var(--accent-color);
   line-height: 82.5%;
@@ -318,7 +259,6 @@ body {
   }
 
   .header__title {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
     margin-inline-start: calc(var(--content-padding) * -1);
   }
 
@@ -326,47 +266,24 @@ body {
     width: 35.5vh;
   }
 
-  .footer__text {
-    font-size: clamp(7.5rem, 0.5625rem + 14.4531vw, 9.8125rem);
-  }
-
   .main {
     gap: 80px;
   }
 
-  .section {
+  .concentration_why,
+  .concentration_how {
     grid-template-columns: 1fr 2fr;
   }
 
-  .concentration_why {
-    grid-template-areas:
-      "title multitasking"
-      "title dopamine";
-  }
-
   .concentration_what {
-    grid-template-areas:
-      "title ."
-      "concentration concentration"
-      "food food"
-      "gadgets gadgets";
+    grid-template-columns: 1fr 2fr;
   }
 
-  .concentration_how {
-    grid-template-areas:
-      "title subtitle"
-      "title meditate"
-      "title music"
-      "title walk"
-      "title eat"
-      "title read";
+  .concentration_what .section__content {
+    grid-column: 1 / -1;
   }
 
   .concentration_images {
-    grid-template-columns: 1fr;
-    grid-template-areas:
-      "title"
-      "gallery";
     gap: 20px;
   }
 
@@ -400,30 +317,20 @@ body {
     width: 47.7vw;
   }
 
-  .section {
+  .concentration_why,
+  .concentration_what,
+  .concentration_how {
     grid-template-columns: repeat(3, 1fr);
   }
 
-  .concentration_why {
-    grid-template-areas:
-      "title multitasking multitasking"
-      "title dopamine dopamine";
+  .concentration_why .section__content,
+  .concentration_how .section__content {
+    grid-column: span 2;
   }
 
-  .concentration_what {
-    grid-template-areas:
-      "title . ."
-      "concentration food gadgets";
-  }
-
-  .concentration_how {
-    grid-template-areas:
-      "title subtitle subtitle"
-      "title meditate meditate"
-      "title music music"
-      "title walk walk"
-      "title eat eat"
-      "title read read";
+  .concentration_what .section__content {
+    grid-template-columns: repeat(3, 1fr);
+    grid-column: 1 / -1;
   }
 
   .concentration_images {
